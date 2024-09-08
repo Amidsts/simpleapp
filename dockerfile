@@ -15,7 +15,6 @@ EXPOSE 5000
 CMD ["nodemon", "--watch", "src", "--legacy-watch", "--exec", "ts-node", "src/index.ts"]
 
 
-#====== For Production =============
 # FROM node:18-slim
 # RUN npm install -g nodemon
 # WORKDIR /app
