@@ -1,0 +1,40 @@
+- Command to build an image using a docker file
+    docker build -t <image-name>:<tag> <path-to-dockerfile>
+
+- command to push an image to docker hub
+1. docker login
+2. docker tag <local-image-name>:<tag> <dockerhub-username>/<repository>:<tag>
+3. docker push <dockerhub-username>/<repository>:<tag>
+
+- to use .env file when running a container, use:
+1. docker run --env-file .env <image-name>:<tag>
+2. use kubernetes secret
+
+- To run a Docker image and name the container
+    docker run --name <container-name> <image-name>
+
+- For port mapping use
+1. docker run -p <host-port>:<container-port> <image-name>
+
+- To run and create a container in interractive mode using bash
+1. docker run -it <image-name> bash (NOTE: in this case, docker create a container with random name, beacuse no container name was specified )
+
+- To delete a conainer after it it is stopped from running, use 
+ docker run --rm <image-name>
+
+-delete an image
+ docker image rm <image-name>
+
+- delete a container
+ docker container rm <container-name>
+
+- docker start <container-name> or docker stop <container-name> to start or stop container respectively
+
+- Volume in docker (for watching code changes-p )
+ docker run -v <absolut-path-to the project working directory>:<workdir on docker file> <image-name> 
+ // e.g docker run -v C:\Users\hp\Documents\Docker\simple:/app <image-name>
+
+
+ ================= DOCKER COMPOSE =========================
+- To build an image
+ docker compose up
